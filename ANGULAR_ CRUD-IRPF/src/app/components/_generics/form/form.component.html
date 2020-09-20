@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">{{title}}</h4>
+        <p class="card-category">{{subtitle}}</p>
+      </div>
+      <div class="card-body">
+        <form name="form" [formGroup]="formGroup" (ngSubmit)="submit()">
+          <div class="row">
+            <ng-content> </ng-content>
+          </div>
+          <ng-content select="[button]"> </ng-content>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
