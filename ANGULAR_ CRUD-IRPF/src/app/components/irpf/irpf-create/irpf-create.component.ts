@@ -15,16 +15,16 @@ export class IrpfCreateComponent implements OnInit {
 
   form = new FormGroup({
     nome: new FormControl('', [Validators.required]),
-    // cpfCnpj: new FormControl('', [Validators.required, Validators.pattern(REGEX_CPF_CNPJ)]),
-    cpfCnpj: new FormControl('', [Validators.required]),
-    // email: new FormControl('', [Validators.required, Validators.email]),
-    // dt_nascimento: new FormControl('', [Validators.required]),
-    // tituloEleitoral: new FormControl('', [Validators.required, Validators.pattern(REGEX_TITULO_ELEITOR)]),
-    // rendimentosTributaveis: new FormControl('', [Validators.required]),
-    // endereco: new FormControl('', [Validators.required]),
-    // cidade: new FormControl('', [Validators.required]),
-    // bairro: new FormControl('', [Validators.required]),
-    // cep: new FormControl('', [Validators.required]),
+    cpfCnpj: new FormControl('', [Validators.required, Validators.pattern(REGEX_CPF_CNPJ)]),
+    // cpfCnpj: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    dt_nascimento: new FormControl('', [Validators.required]),
+    tituloEleitoral: new FormControl('', [Validators.required, Validators.pattern(REGEX_TITULO_ELEITOR)]),
+    rendimentosTributaveis: new FormControl('', [Validators.required]),
+    endereco: new FormControl('', [Validators.required]),
+    cidade: new FormControl('', [Validators.required]),
+    bairro: new FormControl('', [Validators.required]),
+    cep: new FormControl('', [Validators.required]),
   });
 
   constructor(private irpfService: IrpfService) { }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisterIrpfComponent } from './register-irpf.component';
+import { ViewDashboardComponent } from './view-dashboard.component';
 
-describe('RegisterIrpfComponent', () => {
-  let component: RegisterIrpfComponent;
-  let fixture: ComponentFixture<RegisterIrpfComponent>;
+describe('ViewDashboardComponent', () => {
+  let component: ViewDashboardComponent;
+  let fixture: ComponentFixture<ViewDashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterIrpfComponent ]
+      declarations: [ ViewDashboardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterIrpfComponent);
+    fixture = TestBed.createComponent(ViewDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

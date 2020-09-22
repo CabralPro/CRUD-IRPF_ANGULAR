@@ -15,7 +15,6 @@ import { InputComponent } from './components/_generics/input/input.component';
 
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { UserProfileComponent } from './views/user-profile/user-profile.component';
-import { RegisterIrpfComponent } from './views/register-irpf/register-irpf.component';
 import { TableListComponent } from './views/table-list/table-list.component';
 import { TypographyComponent } from './views/typography/typography.component';
 import { IconsComponent } from './views/icons/icons.component';
@@ -30,6 +29,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AgmCoreModule } from '@agm/core';
@@ -41,6 +41,12 @@ import { IrpfDeleteComponent } from './components/irpf/irpf-delete/irpf-delete.c
 import { IrpfReadComponent } from './components/irpf/irpf-read/irpf-read.component';
 import { IrpfUpdateComponent } from './components/irpf/irpf-update/irpf-update.component';
 
+import { ViewCreateIrpfComponent } from './views/irpf/view-create-irpf/view-create-irpf.component';
+import { ViewDashboardComponent } from './views/irpf/view-dashboard/view-dashboard.component';
+import { ViewIrpfsComponent } from './views/irpf/view-irpfs/view-irpfs.component';
+import { TableComponent } from './components/_generics/table/table.component';
+import { DialogComponent } from './components/_generics/dialog/dialog.component';
+import { ConfirmationComponent } from './components/_generics/confirmation/confirmation.component';
 
 @NgModule({
   imports: [
@@ -60,6 +66,7 @@ import { IrpfUpdateComponent } from './components/irpf/irpf-update/irpf-update.c
     MatTooltipModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatDialogModule,
     HttpClientModule,
     CurrencyMaskModule
   ],
@@ -72,7 +79,6 @@ import { IrpfUpdateComponent } from './components/irpf/irpf-update/irpf-update.c
     SidebarComponent,
     DashboardComponent,
     UserProfileComponent,
-    RegisterIrpfComponent,
     TableListComponent,
     TypographyComponent,
     IconsComponent,
@@ -85,6 +91,12 @@ import { IrpfUpdateComponent } from './components/irpf/irpf-update/irpf-update.c
     IrpfDeleteComponent,
     IrpfReadComponent,
     IrpfUpdateComponent,
+    ViewCreateIrpfComponent,
+    ViewDashboardComponent,
+    ViewIrpfsComponent,
+    TableComponent,
+    DialogComponent,
+    ConfirmationComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
