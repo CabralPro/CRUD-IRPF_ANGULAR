@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Irpf } from '../irpf.model';
 import { IrpfService } from '../irpf.service';
-import {IrpfUpdateComponent} from '../irpf-update/irpf-update.component';
+import { IrpfUpdateComponent } from '../irpf-update/irpf-update.component';
 import { ComponentType } from '@angular/cdk/portal';
 
 @Component({
@@ -26,18 +26,19 @@ export class IrpfReadComponent implements OnInit {
   constructor(private irpfService: IrpfService) { }
 
   ngOnInit(): void {
-    this.irpfService.read().subscribe(irpfs => {
-      this.irpfs = irpfs
-      // console.log('this.irpfs :>> ', this.irpfs);
-    })
+    this.fillTable();
   }
 
   deleteIrpf = (irpfSelected: Irpf) => {
     return () => {
       this.irpfService.delete(irpfSelected.id).subscribe(() => {
         this.irpfService.showMessage("IRPF excluido com sucesso!");
-        // this.router.navigate(["/irpfs"]);
+        this.fillTable();
       });
     }
+  }
+
+  fillTable(){
+    this.irpfService.read().subscribe(irpfs => this.irpfs = irpfs)
   }
 }

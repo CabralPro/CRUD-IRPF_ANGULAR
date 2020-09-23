@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Irpf } from '../irpf.model';
+import { IrpfService } from '../irpf.service';
 
 @Component({
   selector: 'app-irpf-update',
@@ -11,8 +12,5 @@ export class IrpfUpdateComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log('this._object : UPDATE COMPONENT >> ', this._object);
-  }
-
+  ngOnInit(): void { }
 }

@@ -26,11 +26,11 @@ export class IrpfService {
     });
   }
 
-  create(irpf: Irpf): Observable<Irpf> {
+  create(irpf: Irpf): Promise<Irpf> {
     return this.http.post<Irpf>(this.baseUrl, irpf).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
-    );
+    ).toPromise();
   }
 
   read(): Observable<Irpf[]> {
@@ -48,12 +48,12 @@ export class IrpfService {
     );
   }
 
-  update(irpf: Irpf): Observable<Irpf> {
+  update(irpf: Irpf): Promise<Irpf> {
     const url = `${this.baseUrl}/${irpf.id}`;
     return this.http.put<Irpf>(url, irpf).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
-    );
+    ).toPromise();
   }
 
   delete(id: number): Observable<Irpf> {

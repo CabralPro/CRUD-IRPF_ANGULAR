@@ -14,17 +14,19 @@ export class FormComponent implements OnInit {
   @Input() subtitle: string;
   @Input() callback: Function;
 
+  loading: Boolean = false;
+
   constructor() { }
 
   ngOnInit(): void { }
 
   async submit() {
     if (!this.formGroup.valid) return;
+    this.loading = true
     const resp = await this.callback();
-    console.log('resp :>> ', resp);
-    // if (resp.status == 200)
-    // else
-    //   alert("erro")
+    // if(resp) this.formGroup.res;
+    // console.log('resp :>> ', resp);
+    this.loading = false;
   }
 
 }

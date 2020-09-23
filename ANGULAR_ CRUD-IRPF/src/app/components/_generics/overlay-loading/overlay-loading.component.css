@@ -1,0 +1,14 @@
+.overlay-loading{
+    position: relative;
+}
+.overlay-loading .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.445);
+    backdrop-filter: blur(.7px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}

@@ -12,9 +12,9 @@ import { ConfirmationComponent } from '../confirmation/confirmation.component';
 export class DialogComponent implements OnInit {
 
   @Input() content: ComponentType<unknown>;
+  @Input() callbackConfirmation: Function;
   @Input() _type: string;
   @Input() _object: object;
-  @Input() callbackConfirmation: Function;
 
   constructor(public dialog: MatDialog) { }
 

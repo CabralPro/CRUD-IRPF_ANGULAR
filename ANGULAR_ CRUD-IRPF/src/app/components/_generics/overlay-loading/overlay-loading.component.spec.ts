@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IrpfDeleteComponent } from './irpf-delete.component';
+import { OverlayLoadingComponent } from './overlay-loading.component';
 
-describe('IrpfDeleteComponent', () => {
-  let component: IrpfDeleteComponent;
-  let fixture: ComponentFixture<IrpfDeleteComponent>;
+describe('OverlayLoadingComponent', () => {
+  let component: OverlayLoadingComponent;
+  let fixture: ComponentFixture<OverlayLoadingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IrpfDeleteComponent ]
+      declarations: [ OverlayLoadingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IrpfDeleteComponent);
+    fixture = TestBed.createComponent(OverlayLoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,18 @@
+<app-form [formGroup]="form" [callback]="_type == 'create' ? createIrpf: updateIrpf" [service]="irpfService"
+  title="Identificação do contribuinte"
+  subtitle="{{'Declaração de ajuste anual original - ' + (_type == 'create' ? 'Cadastro' : 'Edição')}}">
+  <app-input placeholder="Nome Completo" name="nome"></app-input>
+  <app-input placeholder="CPF / CNPJ" type="number" name="cpfCnpj"></app-input>
+  <app-input placeholder="Email" type="email" name="email"></app-input>
+  <app-input placeholder="Data de nascimento" type="date" name="dt_nascimento"></app-input>
+  <app-input placeholder="Título eleitoral" type="number" name="tituloEleitoral"></app-input>
+  <app-input placeholder="Rendimentos tributáveis (R$)" type="money" name="rendimentosTributaveis"></app-input>
+  <app-input placeholder="Endereço" name="endereco"></app-input>
+  <app-input placeholder="Cidade" name="cidade"></app-input>
+  <app-input placeholder="Bairro" name="bairro"></app-input>
+  <app-input placeholder="Cep" name="cep" type="number"></app-input>
+  <div actions class="actionsForm">
+    <app-button *ngIf="_type == 'update'" mat-dialog-close label="Cancelar" _class="btn-danger mr-3"></app-button>
+    <app-button [label]="_type == 'create' ? 'Entregar Declaração' : 'Salvar'" type="submit" ></app-button>
+  </div>
+</app-form>

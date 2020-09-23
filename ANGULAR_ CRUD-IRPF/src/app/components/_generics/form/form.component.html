@@ -7,10 +7,12 @@
       </div>
       <div class="card-body">
         <form name="form" [formGroup]="formGroup" (ngSubmit)="submit()">
-          <div class="row">
-            <ng-content> </ng-content>
-          </div>
-          <ng-content select="[button]"> </ng-content>
+          <app-overlay-loading [isLoading]="loading">
+            <div class="row">
+              <ng-content> </ng-content>
+            </div>
+            <ng-content select="[actions]"> </ng-content>
+          </app-overlay-loading>
         </form>
       </div>
     </div>

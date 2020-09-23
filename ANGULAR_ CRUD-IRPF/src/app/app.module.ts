@@ -30,6 +30,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AgmCoreModule } from '@agm/core';
@@ -37,7 +38,6 @@ import { TemplateComponent } from './components/template/template.component';
 import { FormComponent } from './components/_generics/form/form.component';
 import { ButtonComponent } from './components/_generics/button/button.component';
 import { IrpfCreateComponent } from './components/irpf/irpf-create/irpf-create.component';
-import { IrpfDeleteComponent } from './components/irpf/irpf-delete/irpf-delete.component';
 import { IrpfReadComponent } from './components/irpf/irpf-read/irpf-read.component';
 import { IrpfUpdateComponent } from './components/irpf/irpf-update/irpf-update.component';
 
@@ -47,6 +47,8 @@ import { ViewIrpfsComponent } from './views/irpf/view-irpfs/view-irpfs.component
 import { TableComponent } from './components/_generics/table/table.component';
 import { DialogComponent } from './components/_generics/dialog/dialog.component';
 import { ConfirmationComponent } from './components/_generics/confirmation/confirmation.component';
+import { IrpfFormComponent } from './components/irpf/irpf-form/irpf-form.component';
+import { OverlayLoadingComponent } from './components/_generics/overlay-loading/overlay-loading.component';
 
 @NgModule({
   imports: [
@@ -67,6 +69,7 @@ import { ConfirmationComponent } from './components/_generics/confirmation/confi
     MatSelectModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     CurrencyMaskModule
   ],
@@ -88,7 +91,6 @@ import { ConfirmationComponent } from './components/_generics/confirmation/confi
     FormComponent,
     ButtonComponent,
     IrpfCreateComponent,
-    IrpfDeleteComponent,
     IrpfReadComponent,
     IrpfUpdateComponent,
     ViewCreateIrpfComponent,
@@ -96,7 +98,9 @@ import { ConfirmationComponent } from './components/_generics/confirmation/confi
     ViewIrpfsComponent,
     TableComponent,
     DialogComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    IrpfFormComponent,
+    OverlayLoadingComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

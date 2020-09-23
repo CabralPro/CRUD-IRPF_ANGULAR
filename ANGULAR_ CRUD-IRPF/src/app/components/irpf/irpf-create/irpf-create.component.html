@@ -1,14 +1,1 @@
-<app-form [formGroup]="form" [callback]="createIrpf" [service]="irpfService" title="Identificação do contribuinte"
-  subtitle="Declaração de ajuste anual original">
-  <app-input class="col-md-6" placeholder="Nome Completo" name="nome"></app-input>
-  <app-input class="col-md-6" placeholder="CPF / CNPJ" type="number" name="cpfCnpj"></app-input>
-  <app-input class="col-md-6" placeholder="Email" type="email" name="email"></app-input>
-  <app-input class="col-md-6" placeholder="Data de nascimento" type="date" name="dt_nascimento"></app-input>
-  <app-input class="col-md-6" placeholder="Título eleitoral" type="number" name="tituloEleitoral"></app-input>
-  <app-input class="col-md-6" placeholder="Rendimentos tributáveis (R$)" type="money" name="rendimentosTributaveis"></app-input>
-  <app-input class="col-md-6" placeholder="Endereço" name="endereco"></app-input>
-  <app-input class="col-md-6" placeholder="Cidade" name="cidade"></app-input>
-  <app-input class="col-md-6" placeholder="Bairro" name="bairro"></app-input>
-  <app-input class="col-md-6" placeholder="Cep" name="cep" type="number"></app-input>
-  <app-button button label="Entregar Declaração" class="pull-right mt-3"></app-button>
-</app-form>
+<app-irpf-form _type="create"></app-irpf-form>
