@@ -1,9 +1,11 @@
+{{(changeIrpfs$ | async).changeIrpfs }}
 <app-table 
   title="IRPF's cadastrados" 
   subtitle=" Imposto de renda pessoa física" 
   [headers]="headers"
   [list]="irpfs"
-  [deleteFunc]="deleteIrpf"
+  [loadItems]="loadIrpfs"  
   [updateComponent]="updateComponent"  
+  [deleteComponent]="deleteComponent"  
   >
 </app-table>

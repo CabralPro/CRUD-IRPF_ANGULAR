@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-form',
@@ -7,16 +8,18 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 
-
 export class FormComponent implements OnInit {
   @Input() formGroup: FormGroup;
   @Input() title: string;
   @Input() subtitle: string;
   @Input() callback: Function;
 
+  initFormState: FormGroup;
+
   loading: Boolean = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void { }
 
@@ -24,8 +27,13 @@ export class FormComponent implements OnInit {
     if (!this.formGroup.valid) return;
     this.loading = true
     const resp = await this.callback();
-    // if(resp) this.formGroup.res;
-    // console.log('resp :>> ', resp);
+    if (resp) {
+      this.formGroup.reset();
+      Object.keys(this.formGroup.controls).forEach(key => {
+        this.formGroup.get(key).setErrors(null);
+      });
+      setTimeout(() => location.reload(), 1500)
+    }
     this.loading = false;
   }
 

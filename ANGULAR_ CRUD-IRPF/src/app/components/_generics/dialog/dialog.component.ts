@@ -12,7 +12,7 @@ import { ConfirmationComponent } from '../confirmation/confirmation.component';
 export class DialogComponent implements OnInit {
 
   @Input() content: ComponentType<unknown>;
-  @Input() callbackConfirmation: Function;
+  @Input() callbackContinue: Function;
   @Input() _type: string;
   @Input() _object: object;
 
@@ -24,7 +24,7 @@ export class DialogComponent implements OnInit {
     if (this._type == 'confirmation') {
       let dialogRefConf: MatDialogRef<ConfirmationComponent, any>;
       dialogRefConf = this.dialog.open(ConfirmationComponent);
-      dialogRefConf.componentInstance.callback = this.callbackConfirmation;
+      dialogRefConf.componentInstance.callback = this.callbackContinue;
     } else {
       let dialogRef: any;
       dialogRef = this.dialog.open(this.content, { height: '85vh' });

@@ -6,7 +6,7 @@
         <p class="card-category">{{subtitle}}</p>
       </div>
       <div class="card-body">
-        <form name="form" [formGroup]="formGroup" (ngSubmit)="submit()">
+        <form name="form" [formGroup]="formGroup"  (ngSubmit)="submit()" #formDirective="ngForm"  >
           <app-overlay-loading [isLoading]="loading">
             <div class="row">
               <ng-content> </ng-content>

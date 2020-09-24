@@ -11,10 +11,22 @@ export class TableComponent implements OnInit {
   @Input() headers: object[];
   @Input() title: string;
   @Input() subtitle: string;
-  @Input() deleteFunc: Function;
+  @Input() loadItems: Function;
   @Input() updateComponent: ComponentType<unknown>;
+  @Input() deleteComponent: ComponentType<unknown>;
+
+  loading: Boolean = true;
+
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.executeLoadItems();
+  }
+
+  async executeLoadItems(){
+    this.loading = true;
+    await this.loadItems();
+    this.loading = false;
+  }
 }

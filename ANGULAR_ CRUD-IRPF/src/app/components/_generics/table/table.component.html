@@ -1,32 +1,34 @@
-<div class="card">
+<div class="card table">
   <div class="card-header card-header-danger">
     <h4 class="card-title ">{{title}}</h4>
     <p class="card-category"> {{subtitle}}</p>
   </div>
-  <div class="card-body">
-    <div class="table-responsive">
-      <table class="table">
-        <thead class=" text-primary">
-          <th *ngFor="let header of headers">{{header.text}}</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let _object of list">
-            <td *ngFor="let item of [].constructor(headers.length); let i = index">
-              <div *ngIf="headers[i].actions; else default">
-                <app-dialog _type="confirmation" [callbackConfirmation]="deleteFunc(_object)">
-                  <i class="material-icons text-danger">delete_forever</i>
-                </app-dialog>
-                <app-dialog [content]="updateComponent" [_object]="_object">
-                  <i class="material-icons text-primary">edit</i>
-                </app-dialog>
-              </div>
-              <ng-template #default>
-                {{headers[i].prefix}} {{_object[headers[i].value]}}
-              </ng-template>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <app-overlay-loading [isLoading]="loading">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class=" text-primary">
+            <th *ngFor="let header of headers">{{header.text}}</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let _object of list">
+              <td *ngFor="let item of [].constructor(headers.length); let i = index">
+                <div *ngIf="headers[i].actions; else default">
+                  <app-dialog [content]="deleteComponent" [_object]="_object">
+                    <i class="material-icons text-danger">delete_forever</i>
+                  </app-dialog>
+                  <app-dialog [content]="updateComponent" [_object]="_object">
+                    <i class="material-icons text-primary">edit</i>
+                  </app-dialog>
+                </div>
+                <ng-template #default>
+                  {{headers[i].prefix}} {{_object[headers[i].value]}}
+                </ng-template>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
+  </app-overlay-loading>
 </div>

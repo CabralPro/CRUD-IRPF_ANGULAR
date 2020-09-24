@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { StoreModule } from '@ngrx/store';
+import { changeIrpfs } from './components/irpf/irpf-store';
 
 import { AppComponent } from './app.component';
 
@@ -49,6 +51,7 @@ import { DialogComponent } from './components/_generics/dialog/dialog.component'
 import { ConfirmationComponent } from './components/_generics/confirmation/confirmation.component';
 import { IrpfFormComponent } from './components/irpf/irpf-form/irpf-form.component';
 import { OverlayLoadingComponent } from './components/_generics/overlay-loading/overlay-loading.component';
+import { IrpfDeleteComponent } from './components/irpf/irpf-delete/irpf-delete.component';
 
 @NgModule({
   imports: [
@@ -71,7 +74,10 @@ import { OverlayLoadingComponent } from './components/_generics/overlay-loading/
     MatDialogModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    StoreModule.forRoot({
+      changeIrpfs
+    })
   ],
   declarations: [
     AppComponent,
@@ -101,6 +107,7 @@ import { OverlayLoadingComponent } from './components/_generics/overlay-loading/
     ConfirmationComponent,
     IrpfFormComponent,
     OverlayLoadingComponent,
+    IrpfDeleteComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

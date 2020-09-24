@@ -33,19 +33,11 @@ export class IrpfService {
     ).toPromise();
   }
 
-  read(): Observable<Irpf[]> {
+  read(): Promise<Irpf[]> {
     return this.http.get<Irpf[]>(this.baseUrl).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
-    );
-  }
-
-  readById(id: number): Observable<Irpf> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.get<Irpf>(url).pipe(
-      map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
-    );
+    ).toPromise();
   }
 
   update(irpf: Irpf): Promise<Irpf> {
@@ -56,17 +48,16 @@ export class IrpfService {
     ).toPromise();
   }
 
-  delete(id: number): Observable<Irpf> {
+  delete(id: number): Promise<Irpf> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Irpf>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
-    );
+    ).toPromise();
   }
 
   errorHandler(e: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);
     return EMPTY;
   }
-
 }
