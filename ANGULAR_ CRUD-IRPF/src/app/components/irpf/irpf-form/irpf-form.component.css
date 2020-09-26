@@ -11,6 +11,9 @@ app-input {
   padding-right: 15px;
   padding-left: 15px;
 }
+app-button {
+  margin: 10px;
+}
 
 
 .actionsForm {

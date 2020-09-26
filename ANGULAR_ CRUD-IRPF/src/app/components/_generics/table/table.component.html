@@ -1,5 +1,5 @@
 <div class="card table">
-  <div class="card-header card-header-danger">
+  <div class="card-header card-header-primary">
     <h4 class="card-title ">{{title}}</h4>
     <p class="card-category"> {{subtitle}}</p>
   </div>
@@ -14,11 +14,11 @@
             <tr *ngFor="let _object of list">
               <td *ngFor="let item of [].constructor(headers.length); let i = index">
                 <div *ngIf="headers[i].actions; else default">
-                  <app-dialog [content]="deleteComponent" [_object]="_object">
-                    <i class="material-icons text-danger">delete_forever</i>
-                  </app-dialog>
                   <app-dialog [content]="updateComponent" [_object]="_object">
                     <i class="material-icons text-primary">edit</i>
+                  </app-dialog>
+                  <app-dialog [content]="deleteComponent" [_object]="_object">
+                    <i class="material-icons text-danger">delete_forever</i>
                   </app-dialog>
                 </div>
                 <ng-template #default>

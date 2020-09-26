@@ -1,0 +1,14 @@
+<div id="card-dashboard" class="card card-stats">
+  <app-overlay-loading [execute]="loadIrpfs">
+    <div class="card-header card-header-icon">
+      <div class="card-icon">
+        <i class="material-icons">recent_actors</i>
+      </div>
+      <p class="card-category">Cadastros</p>
+      <h3 class="card-title">{{iprfsCount}}
+        <small>IRPF's</small>
+      </h3>
+    </div>
+    <div class="card-footer"></div>
+  </app-overlay-loading>
+</div>

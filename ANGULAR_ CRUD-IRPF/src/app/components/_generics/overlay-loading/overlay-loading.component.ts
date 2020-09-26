@@ -7,10 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class OverlayLoadingComponent implements OnInit {
   @Input() isLoading: Boolean;
+  @Input() execute: Function;
+  loading: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.start();
+  }
+
+  async start() {
+    if (this.execute)
+      await this.execute();
+    this.loading = false
   }
 
 }

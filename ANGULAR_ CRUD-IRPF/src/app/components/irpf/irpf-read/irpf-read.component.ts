@@ -33,7 +33,7 @@ export class IrpfReadComponent implements OnChanges {
   ]
 
   constructor(private irpfService: IrpfService, 
-    private store: Store<{changeIrpfs: Boolean}>
+    // private store: Store<{changeIrpfs: Boolean}>
     ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -42,7 +42,7 @@ export class IrpfReadComponent implements OnChanges {
   }
 
   ngOnInit(): void {
-    this.changeIrpfs$ = this.store.pipe(select('changeIrpfs'))
+    // this.changeIrpfs$ = this.store.pipe(select('changeIrpfs'))
   }
 
   loadIrpfs = async () => {

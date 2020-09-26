@@ -15,15 +15,6 @@ import { NavbarComponent } from './components/template/navbar/navbar.component';
 import { SidebarComponent } from './components/template/sidebar/sidebar.component';
 import { InputComponent } from './components/_generics/input/input.component';
 
-import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { UserProfileComponent } from './views/user-profile/user-profile.component';
-import { TableListComponent } from './views/table-list/table-list.component';
-import { TypographyComponent } from './views/typography/typography.component';
-import { IconsComponent } from './views/icons/icons.component';
-import { MapsComponent } from './views/maps/maps.component';
-import { NotificationsComponent } from './views/notifications/notifications.component';
-import { UpgradeComponent } from './views/upgrade/upgrade.component';
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
@@ -52,6 +43,7 @@ import { ConfirmationComponent } from './components/_generics/confirmation/confi
 import { IrpfFormComponent } from './components/irpf/irpf-form/irpf-form.component';
 import { OverlayLoadingComponent } from './components/_generics/overlay-loading/overlay-loading.component';
 import { IrpfDeleteComponent } from './components/irpf/irpf-delete/irpf-delete.component';
+import { IrpsDashboardComponent } from './components/irpf/irps-dashboard/irps-dashboard.component';
 
 @NgModule({
   imports: [
@@ -86,14 +78,6 @@ import { IrpfDeleteComponent } from './components/irpf/irpf-delete/irpf-delete.c
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    DashboardComponent,
-    UserProfileComponent,
-    TableListComponent,
-    TypographyComponent,
-    IconsComponent,
-    MapsComponent,
-    NotificationsComponent,
-    UpgradeComponent,
     FormComponent,
     ButtonComponent,
     IrpfCreateComponent,
@@ -108,6 +92,7 @@ import { IrpfDeleteComponent } from './components/irpf/irpf-delete/irpf-delete.c
     IrpfFormComponent,
     OverlayLoadingComponent,
     IrpfDeleteComponent,
+    IrpsDashboardComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

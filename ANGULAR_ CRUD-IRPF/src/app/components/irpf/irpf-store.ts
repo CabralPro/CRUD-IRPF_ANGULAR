@@ -7,6 +7,5 @@ export class ChangeStateIprfs implements Action{
 const INITIAL_STATE = { changeIrpfs: false }
 
 export const changeIrpfs = (state = INITIAL_STATE , action: Action) => {
-    console.log("change ;)");
     return { ...state, changeIrpfs: !state.changeIrpfs }
 }

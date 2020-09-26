@@ -1,0 +1,7 @@
+#card-dashboard{
+    max-width: 300px;
+}
+
+#card-dashboard .card-icon{
+    background-color: var(--primary);
+}

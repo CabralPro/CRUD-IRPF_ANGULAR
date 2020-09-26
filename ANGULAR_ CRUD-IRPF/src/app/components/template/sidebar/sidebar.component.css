@@ -1,0 +1,3 @@
+.sidebar-wrapper .active a{
+ background-color: var(--primary);
+}
