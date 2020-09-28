@@ -2596,7 +2596,7 @@ __webpack_require__.r(__webpack_exports__);
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var BASE_URL = "http://54.232.146.73";
+var BASE_URL = "http://54.232.146.73/api";
 
 
 /***/ }),
