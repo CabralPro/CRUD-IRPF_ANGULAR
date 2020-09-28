@@ -9,7 +9,6 @@ export class ViewCreateIrpfComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

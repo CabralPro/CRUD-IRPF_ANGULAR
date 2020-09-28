@@ -3,7 +3,6 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ComponentType } from '@angular/cdk/portal';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
 
-
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',

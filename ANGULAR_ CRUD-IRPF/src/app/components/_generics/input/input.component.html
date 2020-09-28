@@ -1,8 +1,8 @@
 <mat-form-field>
-    <input *ngIf="type == 'money'; else default" currencyMask   matInput [placeholder]="placeholder"
-        [formControl]="formControl" [options]="customCurrencyMaskConfig">
-    <ng-template #default>
-        <input matInput [placeholder]="placeholder" [type]="type" [formControl]="formControl">
-    </ng-template>
-    <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+  <input *ngIf="type == 'money'; else default" currencyMask matInput [placeholder]="placeholder"
+    [formControl]="formControl" [options]="customCurrencyMaskConfig">
+  <ng-template #default>
+    <input matInput [placeholder]="placeholder" [type]="type" [formControl]="formControl">
+  </ng-template>
+  <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
 </mat-form-field>

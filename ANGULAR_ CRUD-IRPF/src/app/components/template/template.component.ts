@@ -9,7 +9,7 @@ import * as $ from "jquery";
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
-  styleUrls: ['./template.component.scss']
+  styleUrls: ['./template.component.css']
 })
 export class TemplateComponent implements OnInit {
   private _router: Subscription;
@@ -130,16 +130,7 @@ export class TemplateComponent implements OnInit {
   ngAfterViewInit() {
       this.runOnRouteChange();
   }
-//   isMaps(path){
-//       var titlee = this.location.prepareExternalUrl(this.location.path());
-//       titlee = titlee.slice( 1 );
-//       if(path == titlee){
-//           return false;
-//       }
-//       else {
-//           return true;
-//       }
-//   }
+
   runOnRouteChange(): void {
     if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');

@@ -1,7 +1,8 @@
 th{
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
-.table .card-body {position: relative;
-    min-height: 200px;
+.table .card-body {
+  position: relative;
+  min-height: 200px;
 }

@@ -5,16 +5,11 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { CurrencyMaskModule } from "ng2-currency-mask";
-import { StoreModule } from '@ngrx/store';
-import { changeIrpfs } from './components/irpf/irpf-store';
-
 import { AppComponent } from './app.component';
-
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavbarComponent } from './components/template/navbar/navbar.component';
 import { SidebarComponent } from './components/template/sidebar/sidebar.component';
 import { InputComponent } from './components/_generics/input/input.component';
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
@@ -25,7 +20,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AgmCoreModule } from '@agm/core';
 import { TemplateComponent } from './components/template/template.component';
 import { FormComponent } from './components/_generics/form/form.component';
@@ -33,7 +27,6 @@ import { ButtonComponent } from './components/_generics/button/button.component'
 import { IrpfCreateComponent } from './components/irpf/irpf-create/irpf-create.component';
 import { IrpfReadComponent } from './components/irpf/irpf-read/irpf-read.component';
 import { IrpfUpdateComponent } from './components/irpf/irpf-update/irpf-update.component';
-
 import { ViewCreateIrpfComponent } from './views/irpf/view-create-irpf/view-create-irpf.component';
 import { ViewDashboardComponent } from './views/irpf/view-dashboard/view-dashboard.component';
 import { ViewIrpfsComponent } from './views/irpf/view-irpfs/view-irpfs.component';
@@ -67,9 +60,6 @@ import { IrpsDashboardComponent } from './components/irpf/irps-dashboard/irps-da
     MatProgressSpinnerModule,
     HttpClientModule,
     CurrencyMaskModule,
-    StoreModule.forRoot({
-      changeIrpfs
-    })
   ],
   declarations: [
     AppComponent,

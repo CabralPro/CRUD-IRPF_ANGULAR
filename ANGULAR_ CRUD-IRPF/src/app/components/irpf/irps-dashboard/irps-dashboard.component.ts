@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as Chartist from 'chartist';
 import { IrpfService } from '../irpf.service';
-
 
 @Component({
   selector: 'app-irps-dashboard',
@@ -18,7 +16,7 @@ export class IrpsDashboardComponent implements OnInit {
 
   loadIrpfs = async () => {
     const resp = await this.irpfService.read();
-    if(resp) this.iprfsCount = resp.length;
+    this.iprfsCount = resp.length;
   }
 
 }

@@ -14,15 +14,18 @@
             <tr *ngFor="let _object of list">
               <td *ngFor="let item of [].constructor(headers.length); let i = index">
                 <div *ngIf="headers[i].actions; else default">
-                  <app-dialog [content]="updateComponent" [_object]="_object">
+                  <app-dialog *ngIf="headers[i].actions.includes('edit')" [content]="updateComponent"
+                    [_object]="_object">
                     <i class="material-icons text-primary">edit</i>
                   </app-dialog>
-                  <app-dialog [content]="deleteComponent" [_object]="_object">
+                  <app-dialog *ngIf="headers[i].actions.includes('delete')" [content]="deleteComponent"
+                    [_object]="_object">
                     <i class="material-icons text-danger">delete_forever</i>
                   </app-dialog>
                 </div>
                 <ng-template #default>
-                  {{headers[i].prefix}} {{_object[headers[i].value]}}
+                  {{headers[i].prefix}}
+                  {{ headers[i].type == 'money' ? convertMoney( _object[headers[i].value]) : _object[headers[i].value]}}
                 </ng-template>
               </td>
             </tr>

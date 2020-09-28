@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IrpfService } from '../irpf.service';
 import { Irpf } from '../irpf.model';
 
 @Component({
@@ -9,12 +8,8 @@ import { Irpf } from '../irpf.model';
 })
 export class IrpfDeleteComponent implements OnInit {
   @Input() _object: Irpf;
-  
-  constructor(private irpfService: IrpfService) { }
 
-  ngOnInit(): void {
-  }
+  constructor() { }
 
-
-
+  ngOnInit(): void { }
 }

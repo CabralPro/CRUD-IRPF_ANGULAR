@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
 import { ViewIrpfsComponent } from '../app/views/irpf/view-irpfs/view-irpfs.component';
 import { ViewDashboardComponent } from '../app/views/irpf/view-dashboard/view-dashboard.component';
-
 import { ViewCreateIrpfComponent } from '../app/views/irpf/view-create-irpf/view-create-irpf.component';
 
 const routes: Routes = [
@@ -23,7 +21,6 @@ const routes: Routes = [
       useHash: true
     })
   ],
-  exports: [
-  ],
+  exports: [],
 })
 export class AppRoutingModule { }

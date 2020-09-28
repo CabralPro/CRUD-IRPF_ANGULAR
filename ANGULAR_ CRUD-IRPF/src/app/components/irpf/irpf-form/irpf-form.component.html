@@ -1,10 +1,9 @@
-<app-form [formGroup]="form" [callback]="currentCallback" [service]="irpfService"
-  title="Identificação do contribuinte"
+<app-form [formGroup]="form" [callback]="currentCallback" title="Identificação do contribuinte"
   subtitle="{{'Declaração de ajuste anual original - ' + (typeForm)}}">
   <app-input placeholder="Nome Completo" name="nome"></app-input>
-  <app-input placeholder="CPF / CNPJ" type="number" name="cpfCnpj"></app-input>
+  <app-input placeholder="Cpf" type="number" name="cpfCnpj"></app-input>
   <app-input placeholder="Email" type="email" name="email"></app-input>
-  <app-input placeholder="Data de nascimento" type="date" name="dt_nascimento"></app-input>
+  <app-input placeholder="Data de nascimento" type="date" name="dtNascimento"></app-input>
   <app-input placeholder="Título eleitoral" type="number" name="tituloEleitoral"></app-input>
   <app-input placeholder="Rendimentos tributáveis (R$)" type="money" name="rendimentosTributaveis"></app-input>
   <app-input placeholder="Endereço" name="endereco"></app-input>
@@ -13,11 +12,11 @@
   <app-input placeholder="Cep" name="cep" type="number"></app-input>
   <div actions class="actionsForm">
     <app-button *ngIf="_type != 'create'" mat-dialog-close label="Cancelar" _class="btn-danger"></app-button>
-    <app-dialog *ngIf="_type == 'delete'; else default" _type="confirmation" [callbackContinue]="deleteIrpf(_object)">
-      <app-button [label]="labelSubmitButton" type="submit" ></app-button>
+    <app-dialog *ngIf="_type == 'delete'; else default" _type="confirmation" [callbackContinue]="deleteIrpf">
+      <app-button [label]="labelSubmitButton" type="submit"></app-button>
     </app-dialog>
     <ng-template #default>
-      <app-button  [label]="labelSubmitButton" type="submit" ></app-button>
+      <app-button [label]="labelSubmitButton" type="submit"></app-button>
     </ng-template>
   </div>
 </app-form>

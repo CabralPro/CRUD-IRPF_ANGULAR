@@ -22,7 +22,7 @@ export class IrpfService {
       duration: 3000,
       horizontalPosition: "right",
       verticalPosition: "top",
-      panelClass: isError ? ["msg-error"] : ["bg-success"],
+      panelClass: isError ? ["msg-error"] : ["msg-success"],
     });
   }
 
@@ -41,7 +41,7 @@ export class IrpfService {
   }
 
   update(irpf: Irpf): Promise<Irpf> {
-    const url = `${this.baseUrl}/${irpf.id}`;
+    const url = `${this.baseUrl}`;
     return this.http.put<Irpf>(url, irpf).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -57,7 +57,7 @@ export class IrpfService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Ocorreu um erro!", true);
+    this.showMessage(e.resp ?? "Ocorreu um erro!", true);
     return EMPTY;
   }
 }

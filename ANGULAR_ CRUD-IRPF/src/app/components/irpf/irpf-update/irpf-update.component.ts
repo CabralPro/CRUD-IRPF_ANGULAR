@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Irpf } from '../irpf.model';
-import { IrpfService } from '../irpf.service';
 
 @Component({
   selector: 'app-irpf-update',

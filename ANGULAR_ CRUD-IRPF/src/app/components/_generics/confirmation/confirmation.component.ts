@@ -13,9 +13,9 @@ export class ConfirmationComponent implements OnInit {
 
   constructor(private dialogRef: MatDialog) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  async executeCallback(){
+  async executeCallback() {
     this.loading = true;
     await this.callback();
     this.dialogRef.closeAll()

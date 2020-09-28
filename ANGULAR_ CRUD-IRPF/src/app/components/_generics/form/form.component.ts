@@ -1,6 +1,5 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormGroupDirective } from '@angular/forms';
-import { ThrowStmt } from '@angular/compiler';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -13,13 +12,10 @@ export class FormComponent implements OnInit {
   @Input() title: string;
   @Input() subtitle: string;
   @Input() callback: Function;
-
   initFormState: FormGroup;
-
   loading: Boolean = false;
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit(): void { }
 

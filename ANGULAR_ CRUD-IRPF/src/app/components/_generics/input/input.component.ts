@@ -16,6 +16,8 @@ export class InputComponent implements OnInit {
   @Input() required: boolean = true;
   @Input() type: string = 'text';
   @Input() name: string;
+  formControl = new FormControl;
+  parentForm = new FormComponent;
 
   customCurrencyMaskConfig: CurrencyMaskConfig = {
     align: "left",
@@ -27,15 +29,14 @@ export class InputComponent implements OnInit {
     thousands: "."
   };
 
-  formControl = new FormControl;
-  parentForm = new FormComponent;
-
   constructor(parent: FormComponent) {
     this.parentForm = parent;
   }
 
   ngOnInit(): void {
     this.formControl = this.parentForm.formGroup.controls[this.name] as FormControl;
+    if (this.type == 'date')
+      this.formControl.setValue(this.formControl.value.split('T')[0])
   }
 
   getErrorMessage() {

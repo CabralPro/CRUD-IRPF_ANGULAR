@@ -9,7 +9,5 @@ export class ViewIrpfsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

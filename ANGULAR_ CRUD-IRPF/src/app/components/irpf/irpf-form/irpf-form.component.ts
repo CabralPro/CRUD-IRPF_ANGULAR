@@ -1,11 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { REGEX_CPF_CNPJ, REGEX_TITULO_ELEITOR, REGEX_CEP } from './regex';
+import { REGEX_CPF, REGEX_TITULO_ELEITOR, REGEX_CEP } from './regex';
 import { IrpfService } from '../irpf.service';
 import { Irpf } from '../irpf.model';
 import { MatDialog } from '@angular/material/dialog';
-import { Store } from '@ngrx/store';
-// import { ChangeStateIprfs } from '../irpf-store';
 
 enum TypeForm {
   Create = 'create',
@@ -22,12 +20,13 @@ export class IrpfFormComponent implements OnInit {
 
   @Input() _type: string;
   @Input() irpfSelected: Irpf;
+
   form = new FormGroup({
-    id: new FormControl(''),
+    id: new FormControl(null),
     nome: new FormControl('', [Validators.required]),
-    cpfCnpj: new FormControl('', [Validators.required, Validators.pattern(REGEX_CPF_CNPJ)]),
+    cpfCnpj: new FormControl('', [Validators.required, Validators.pattern(REGEX_CPF)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    dt_nascimento: new FormControl('', [Validators.required]),
+    dtNascimento: new FormControl('', [Validators.required]),
     tituloEleitoral: new FormControl('', [Validators.required, Validators.pattern(REGEX_TITULO_ELEITOR)]),
     rendimentosTributaveis: new FormControl('', [Validators.required]),
     endereco: new FormControl('', [Validators.required]),
@@ -36,12 +35,7 @@ export class IrpfFormComponent implements OnInit {
     cep: new FormControl('', [Validators.required, Validators.pattern(REGEX_CEP)]),
   });
 
-  constructor(private irpfService: IrpfService,
-    private dialogRef: MatDialog,
-    // private store: Store<{ changeIrpfs: Boolean }>
-  ) { }
-
-
+  constructor(private irpfService: IrpfService, private dialogRef: MatDialog) { }
 
   ngOnInit(): void {
     if (this._type != 'create')
@@ -51,10 +45,10 @@ export class IrpfFormComponent implements OnInit {
 
     if (this._type == 'delete')
       this.form.disable();
-
   }
 
   createIrpf = async () => {
+    this.form.removeControl('id');
     const resp = await this.irpfService.create(this.form.value);
     if (resp) this.irpfService.showMessage('Irpf criado!')
     return resp;
@@ -64,16 +58,15 @@ export class IrpfFormComponent implements OnInit {
     const resp = await this.irpfService.update(this.form.value);
     if (resp) this.irpfService.showMessage("IRPF atualizado com sucesso!");
     this.dialogRef.closeAll()
-    // setTimeout(() => location.reload(), 1500)
+    setTimeout(() => location.reload(), 1500)
     return resp;
   }
 
-  deleteIrpf = () => {
-    return async () => {
-      const resp = await this.irpfService.delete(this.irpfSelected.id);
-      if (resp) this.irpfService.showMessage("IRPF excluido com sucesso!");
-      // setTimeout(() => location.reload(), 1500)
-    }
+  deleteIrpf = async () => {
+    const resp = await this.irpfService.delete(this.irpfSelected.id);
+    console.log('resp :>> ', resp);
+    if (resp) this.irpfService.showMessage("IRPF excluido com sucesso!");
+    setTimeout(() => location.reload(), 1500)
   }
 
   get labelSubmitButton() {
@@ -108,5 +101,4 @@ export class IrpfFormComponent implements OnInit {
         return this.updateIrpf;
     }
   }
-
 }
