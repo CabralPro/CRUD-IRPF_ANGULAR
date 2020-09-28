@@ -1,0 +1,8 @@
+:root{
+  --primary: #003772 !important;
+}
+
+.msg-success{
+  background-color: var(--primary);
+}
+
