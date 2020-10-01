@@ -2,12 +2,11 @@
 
 CRUD completo de um sistema simples de cadastro de imposto de renda de pessoa fisia (IRPF).
 
-## Back-End em .Net Core desse projeto :
-````
-https://github.com/CabralPro/CRUD-IRPF_DOTNET-CORE
-````
+### Back-End em .Net Core desse projeto :
 
-## Demonstração:
+https://github.com/CabralPro/CRUD-IRPF_DOTNET-CORE
+
+### Demonstração:
 http://54.232.146.73/#/dashboard
 
 
