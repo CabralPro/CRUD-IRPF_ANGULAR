@@ -8,9 +8,9 @@ https://github.com/CabralPro/CRUD-IRPF_DOTNET-CORE
 ````
 
 ## Demonstração:
-````
 http://54.232.146.73/#/dashboard
-````
+
+
 
 ![alt text](https://github.com/CabralPro/CRUD-IRPF_ANGULAR/blob/master/demo_images/demo1.png?raw=true)
 
