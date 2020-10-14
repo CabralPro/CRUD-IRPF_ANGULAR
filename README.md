@@ -1,13 +1,12 @@
 # CRUD-IRPF_ANGULAR
 
-CRUD completo de um sistema simples de cadastro de imposto de renda de pessoa fisia (IRPF).
+CRUD completo de um sistema simples de cadastro de imposto de renda de pessoa fisica (IRPF).
 
-## Back-End em .Net Core desse projeto :
-````
+### Back-End em .Net Core desse projeto :
+
 https://github.com/CabralPro/CRUD-IRPF_DOTNET-CORE
-````
 
-## Demonstração:
+### Demonstração:
 http://54.232.146.73/#/dashboard
 
 
